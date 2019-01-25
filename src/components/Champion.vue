@@ -4,13 +4,12 @@
         <img 
             :src='champion.championImage' 
             :alt='champion.championName'
-            v-if="!fullView"
             @click="fullView = !fullView"
         >
         <!-- The full view holder -->
         <div 
             class="fullView"
-            v-else
+            v-if="fullView"
         >
             <app-champion-card 
                 :champion="champion"

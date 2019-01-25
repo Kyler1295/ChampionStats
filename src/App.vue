@@ -31,6 +31,9 @@
   import Champion from './components/Champion.vue';
   import Logo from './components/Logo.vue';
 
+  // Analytics
+  import { page } from 'vue-analytics';
+
   export default {
     data() {
       return {
@@ -46,6 +49,11 @@
       currentYear() {
         let currentYear = new Date().getFullYear();
         return currentYear;
+      }
+    },
+    methods: {
+      track() {
+        page('/');
       }
     },
     created() {
@@ -100,6 +108,10 @@
   footer {
     background: black;
     padding: 15px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
     p {
       color: white;
     }
