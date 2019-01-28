@@ -31,7 +31,7 @@
                     <div class="skillInfo">
                         <div class="skillMainInfo">
                             <h5>{{spell.name | replaceTags}}</h5>
-                            <small>Cooldown: {{ spell.cooldownBurn }}</small>
+                            <small><strong>Cooldown:</strong> {{ spell.cooldownBurn }}</small>
                             <small>Cost: {{ spell.costBurn }}</small>
                         </div>
                         <p>{{ exchangeValues(spell) }}</p>
@@ -156,7 +156,67 @@ export default {
     body {
         overflow: hidden;
     }
+    
+    span {
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        i {
+            color: $PrimaryBlue;
+        }
+    }
+    span:hover {
+        i {
+            color: $AccentRed;
+        }
+    }
+
+    // Media Queries
+    @media (min-width: 1024px) {
     .championCard {
+      section {
+        flex-wrap: wrap;
+        .championSplash {
+          width: 30%;
+        }
+        .championSkills {
+          width: 70%;
+          .skill {
+              .skillInfo {
+                  .skillMainInfo {
+                      width: 100%;
+                      h5 {
+                          font-size: 1rem;
+                          width: 40%;
+                      }
+                      small {
+                          width: 30%;
+                      }
+                  }
+              }
+          }
+        }
+        .championStats {
+          width: 100%;
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            h3 {
+                width: 100%;
+            }
+            li {
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+.championCard {
         width: 90%;
         height: 90%;
         background-color: #eee;
@@ -217,28 +277,16 @@ export default {
             .championStats {
                 width: 20%;
                 .statList {
+                    flex-wrap: nowrap;
+                    flex-direction: column;
                     .stat {
                         display: flex;
+                        width: 100%;
                         padding: 0 0 5% 0;
                     }
                 }
             }
         }
     }
-    span {
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        position: absolute;
-        top: 1%;
-        right: 1%;
-        i {
-            color: $PrimaryBlue;
-        }
-    }
-    span:hover {
-        i {
-            color: $AccentRed;
-        }
-    }
+  }
 </style>

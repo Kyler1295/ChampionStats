@@ -106,20 +106,10 @@
     color: $Black;
     font-size: .8rem;
   }
-  li {
-    b {
-    font-size: 1rem;
-    }
-    p {
-      font-size: 1rem;
-      margin-left: 3%;
-    }
-  }
   body {
     background-color: $LightBlue;
   }
 
-  // End Global Styles
   header {
     display: flex;
     justify-content: flex-start;
@@ -152,24 +142,75 @@
           box-shadow: 0 0 0 0.125em $AccentBlue;
     }
   }
+
   .championList {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    div {
-      padding: 1%;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      div {
+        padding: 1%;
+      }
+    }
+    footer {
+      background: black;
+      width: 100vw;
+      height: 5vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      p {
+        color: white;
+        padding: 0 0 0 15px;
+      }
+    }
+
+  // Media Queries
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) { 
+    
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+
+  }
+      
+  // iPad Pro
+  @media (min-width: 1024px) {
+    .championList {
+      justify-content: center;
+      .champion {
+        padding: 2%;
+        width: 20%;
+      }
     }
   }
-  footer {
-    background: black;
-    width: 100vw;
-    height: 5vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    p {
-      color: white;
-      padding: 0 0 0 15px;
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    // Basic Styles
+    p, span, b, small, a {
+      font-size: .8rem;
     }
+    li {
+      b {
+      font-size: 1rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-left: 3%;
+      }
+    }
+    
+
+    // Header Styles
+   
+    // List Styles
+    
   }
 </style>
