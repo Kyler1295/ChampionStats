@@ -96,7 +96,7 @@
                 </ul>
             </div>
         </section>
-        <span @click="switchView">Return to Champion List</span>
+        <span @click="switchView"><i class="fas fa-times-circle"></i></span>
     </section>
 </template>
 
@@ -145,17 +145,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    // Variables
+    $PrimaryBlue: #476C9B;
+    $LightBlue: #ADD9F4;
+    $AccentRed: #984447;
+    $AccentBlue: #468C98;
+    $Black: #101419;
+    $Roboto: 'Roboto', sans-serif;
+    $Myung: 'Song Myung', serif;
+    body {
+        overflow: hidden;
+    }
     .championCard {
-        width: 80%;
-        min-height: 80%;
-        background-color: #fff;
-        border: 2px solid black;
-        border-radius: 15px;
+        width: 90%;
+        height: 90%;
+        background-color: #eee;
+        border: 2px solid $AccentBlue;
+        border-radius: 5px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         padding: 1%;
+        overflow-y: scroll;
+        position: relative;
         section {
             display: flex;
             justify-content: space-between;
@@ -216,8 +229,16 @@ export default {
         font-size: 1.5rem;
         font-weight: bold;
         cursor: pointer;
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        i {
+            color: $PrimaryBlue;
+        }
     }
     span:hover {
-        text-decoration: underline;
+        i {
+            color: $AccentRed;
+        }
     }
 </style>

@@ -51,13 +51,14 @@ export default {
     .fullView {
         width: 100vw;
         height: 100vh;
-        background-color: #e3e3e385;
+        background-color: #10141955;
         position: fixed;
         top: 0;
         left: 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow-y: auto;
     }
 }
     
